@@ -8,4 +8,6 @@ ENV MYSQL_HOST="mariadb" \
     MYSQL_DATABASE="azuracast" \
     MYSQL_RANDOM_ROOT_PASSWORD="yes"
 
+COPY ./scripts/import_file /usr/bin/import_file
+
 # Placeholder Docker file to ensure the AzuraCast docker-compose file always refers to the newest supported image.
