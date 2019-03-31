@@ -11,4 +11,4 @@ ENV MYSQL_HOST="mariadb" \
 COPY scripts/ /usr/local/bin
 RUN chmod -R a+x /usr/local/bin
 
-# Placeholder Docker file to ensure the AzuraCast docker-compose file always refers to the newest supported image.
+COPY ./db.sql /docker-entrypoint-initdb.d/00-azuracast.sql
