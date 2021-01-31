@@ -1,4 +1,4 @@
-FROM mariadb:10.4-bionic
+FROM mariadb:10.5-focal
 
 # Fix locales
 RUN apt-get update \
