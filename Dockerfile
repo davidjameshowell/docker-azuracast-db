@@ -1,7 +1,8 @@
 FROM mariadb:10.5-focal
 
-# Fix locales
+# Fix locales and update packages
 RUN apt-get update \
+    && apt-get dist-upgrade -y --no-install-recommends -o Dpkg::Options::="--force-confold" \
     && apt-get install -y --no-install-recommends language-pack-en \
     && locale-gen en_US \
     && update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 \
