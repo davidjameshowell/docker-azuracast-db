@@ -28,7 +28,6 @@ ENV MYSQL_HOST="mariadb" \
     MYSQL_USER="azuracast" \
     MYSQL_PASSWORD="azur4c457" \
     MYSQL_DATABASE="azuracast" \
-    MYSQL_RANDOM_ROOT_PASSWORD="yes" \
     MYSQL_SLOW_QUERY_LOG=0
 
 COPY ./db.cnf.tmpl /tmp/db.cnf.tmpl
