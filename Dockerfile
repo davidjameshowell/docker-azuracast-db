@@ -14,11 +14,11 @@ ENV LANGUAGE="en_US.UTF-8" \
 # Add Dockerize
 ENV DOCKERIZE_VERSION v0.6.1
 
+COPY add_dockerize.sh /tmp/add_dockerize.sh
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget ca-certificates openssl \
-    && wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && bash /tmp/add_dockerize.sh && \
     && apt-get purge -y --auto-remove wget ca-certificates openssl \
     && rm -rf /var/lib/apt/lists/*
 
