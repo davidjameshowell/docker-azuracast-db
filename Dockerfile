@@ -18,7 +18,7 @@ COPY add_dockerize.sh /tmp/add_dockerize.sh
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends wget ca-certificates openssl \
-    && bash /tmp/add_dockerize.sh && \
+    && bash /tmp/add_dockerize.sh \
     && apt-get purge -y --auto-remove wget ca-certificates openssl \
     && rm -rf /var/lib/apt/lists/*
 
