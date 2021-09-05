@@ -10,10 +10,11 @@ if grep -q "$SUB" <<< "$ARCH"; then
 fi
 
 apt-get update \
-&& apt-get install -y --no-install-recommends wget ca-certificates openssl \
-&& apt-get purge -y --auto-remove wget ca-certificates openssl \
-&& rm -rf /var/lib/apt/lists/*
+&& apt-get install -y --no-install-recommends wget ca-certificates openssl
 
 wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-${DOCKERIZE_ARCH}-${DOCKERIZE_VERSION}.tar.gz
 tar -C /usr/local/bin -xzvf dockerize-linux-${DOCKERIZE_ARCH}-${DOCKERIZE_VERSION}.tar.gz
 rm dockerize-linux-${DOCKERIZE_ARCH}-${DOCKERIZE_VERSION}.tar.gz
+
+apt-get purge -y --auto-remove wget ca-certificates openssl \
+&& rm -rf /var/lib/apt/lists/*
