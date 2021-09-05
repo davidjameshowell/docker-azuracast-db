@@ -15,7 +15,7 @@ ENV LANGUAGE="en_US.UTF-8" \
 ENV DOCKERIZE_VERSION v0.6.1
 
 COPY add_dockerize.sh /tmp/add_dockerize.sh
-RUN bash /tmp/add_dockerize.sh
+RUN chmod +x /tmp/add_dockerize.sh && bash /tmp/add_dockerize.sh
 
 # Sensible default environment values for AzuraCast instances
 ENV MYSQL_HOST="mariadb" \
